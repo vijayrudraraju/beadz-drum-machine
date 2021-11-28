@@ -1,21 +1,22 @@
-import Vue from 'vue';
-import VueLocalStorage from 'vue-localstorage'
-import Machine from './components/Machine.vue';
+import Vue from "vue";
+import VueLocalStorage from "vue-localstorage";
+import Machine from "./components/Machine.vue";
 
 Vue.use(VueLocalStorage);
 
-Vue.filter('slugify', function (text) {
-  return text.toLowerCase()
-     .replace(/\s+/g, '-')
-     .replace(/[^\w\-]+/g, '')
-     .replace(/\-\-+/g, '-')
-     .replace(/^-+/, '')
-     .replace(/-+$/, '');
+Vue.filter("slugify", function (text) {
+  return text
+    .toLowerCase()
+    .replace(/\s+/g, "-")
+    .replace(/[^\w\-\#]+/g, "")
+    .replace(/\-\-+/g, "-")
+    .replace(/^-+/, "")
+    .replace(/-+$/, "");
 });
 
 new Vue({
-  el: '#app',
+  el: "#app",
   components: {
-    'drum-machine': Machine
-  }
+    "drum-machine": Machine,
+  },
 });
